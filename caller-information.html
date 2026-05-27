@@ -129,6 +129,10 @@
             <td>Account No.:</td>
             <td id="accountValue" class="empty">Not provided</td>
           </tr>
+          <tr>
+            <td>Bot Summary:</td>
+            <td id="botsummaryValue" class="empty">Not provided</td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -148,6 +152,7 @@
     setValue('nameValue', params.get('name'));
     setValue('addressValue', params.get('address'));
     setValue('accountValue', params.get('accountnum'));
+    setValue('botsummaryValue', params.get('chatsummary'));
   </script>
 </body>
 </html>
