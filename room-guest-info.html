@@ -109,29 +109,29 @@
 <body>
   <main class="wrap">
     <section class="panel" aria-labelledby="page-title">
-      <div class="logo-block" aria-label="Towngas logo">
-        <img src="Towngas_2024_01.png" alt="Towngas logo" width="600" height="168" style="max-width:min(100%, 420px); height:auto;" />
+      <div class="logo-block" aria-label="Sands Macao logo">
+        <img src="Sands_Macao_Logo.png" alt="Sands Macao logo" width="600" height="168" style="max-width:min(100%, 420px); height:auto;" />
       </div>
 
-      <h1 id="page-title" class="heading">Caller Information</h1>
+      <h1 id="page-title" class="heading">Guest Information</h1>
 
-      <table aria-label="Caller information table">
+      <table aria-label="Guest information table">
         <tbody>
           <tr>
-            <td>Name:</td>
-            <td id="nameValue" class="empty">Not provided</td>
+            <td>Hotel:</td>
+            <td id="hotelValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Address:</td>
-            <td id="addressValue" class="empty">Not provided</td>
+            <td>Room:</td>
+            <td id="roomValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Account No.:</td>
-            <td id="accountValue" class="empty">Not provided</td>
+            <td>Guest Name(s):</td>
+            <td id="guestnameValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Bot Summary:</td>
-            <td id="botsummaryValue" class="empty">Not provided</td>
+            <td>Checkout Date:</td>
+            <td id="checkoutValue" class="empty">Not provided</td>
           </tr>
         </tbody>
       </table>
@@ -149,10 +149,10 @@
       }
     };
 
-    setValue('nameValue', params.get('name'));
-    setValue('addressValue', params.get('address'));
-    setValue('accountValue', params.get('accountnum'));
-    setValue('botsummaryValue', params.get('chatsummary'));
+    setValue('hotelValue', params.get('hotel'));
+    setValue('roomValue', params.get('room'));
+    setValue('guestnameValue', params.get('guestname'));
+    setValue('checkoutValue', params.get('checkout'));
   </script>
 </body>
 </html>
