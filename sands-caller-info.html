@@ -109,8 +109,8 @@
 <body>
   <main class="wrap">
     <section class="panel" aria-labelledby="page-title">
-      <div class="logo-block" aria-label="Towngas logo">
-        <img src="Towngas_2024_01.png" alt="Towngas logo" width="600" height="168" style="max-width:min(100%, 420px); height:auto;" />
+      <div class="logo-block" aria-label="Sands Macao logo">
+        <img src="Sands_Macao_logo.png" alt="Sands Macao logo" width="200" height="200" style="max-width:min(100%, 200px); height:auto;" />
       </div>
 
       <h1 id="page-title" class="heading">Caller Information</h1>
@@ -122,16 +122,16 @@
             <td id="nameValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Address:</td>
-            <td id="addressValue" class="empty">Not provided</td>
+            <td>Loyalty Tier:</td>
+            <td id="tierValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Account No.:</td>
-            <td id="accountValue" class="empty">Not provided</td>
+            <td>Customer Notes:</td>
+            <td id="noteValue" class="empty">Not provided</td>
           </tr>
           <tr>
-            <td>Bot Summary:</td>
-            <td id="botsummaryValue" class="empty">Not provided</td>
+            <td>Preferences:</td>
+            <td id="preferenceValue" class="empty">Not provided</td>
           </tr>
         </tbody>
       </table>
@@ -150,9 +150,9 @@
     };
 
     setValue('nameValue', params.get('name'));
-    setValue('addressValue', params.get('address'));
-    setValue('accountValue', params.get('accountnum'));
-    setValue('botsummaryValue', params.get('chatsummary'));
+    setValue('tierValue', params.get('tier'));
+    setValue('noteValue', params.get('note'));
+    setValue('preferenceValue', params.get('preference'));
   </script>
 </body>
 </html>
