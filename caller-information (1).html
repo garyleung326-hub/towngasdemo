@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caller Information</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #d7dee8;
+      --accent: #d62828;
+      --accent-dark: #b61f1f;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #eef4fb 0%, var(--bg) 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: min(920px, 100%);
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    .logo-block {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+      line-height: 1.15;
+      margin: 0 0 24px;
+      color: var(--accent-dark);
+      letter-spacing: 0.02em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 2px solid var(--border);
+    }
+
+    td {
+      border-bottom: 2px solid var(--border);
+      padding: 22px 20px;
+      vertical-align: top;
+      font-size: clamp(1.25rem, 1rem + 1vw, 2rem);
+      word-wrap: break-word;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    td:first-child {
+      width: 34%;
+      font-weight: 700;
+      background: #f9fafb;
+    }
+
+    td:last-child {
+      color: var(--muted);
+    }
+
+    .empty {
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .panel { padding: 20px; }
+      td { padding: 18px 14px; }
+      td:first-child { width: 40%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel" aria-labelledby="page-title">
+      <div class="logo-block" aria-label="Towngas logo">
+        <img src="Towngas_2024_01.png" alt="Towngas logo" width="600" height="168" style="max-width:min(100%, 420px); height:auto;" />
+      </div>
+
+      <h1 id="page-title" class="heading">Caller Information</h1>
+
+      <table aria-label="Caller information table">
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td id="nameValue" class="empty">Not provided</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td id="addressValue" class="empty">Not provided</td>
+          </tr>
+          <tr>
+            <td>Account No.:</td>
+            <td id="accountValue" class="empty">Not provided</td>
+          </tr>
+          <tr>
+            <td>Bot Summary:</td>
+            <td id="botsummaryValue" class="empty">Not provided</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const setValue = (id, value) => {
+      const el = document.getElementById(id);
+      if (value && value.trim()) {
+        el.textContent = value;
+        el.classList.remove('empty');
+      }
+    };
+
+    setValue('nameValue', params.get('name'));
+    setValue('addressValue', params.get('address'));
+    setValue('accountValue', params.get('accountnum'));
+    setValue('botsummaryValue', params.get('chatsummary'));
+  </script>
+</body>
+</html>
