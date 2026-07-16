@@ -110,7 +110,7 @@
   <main class="wrap">
     <section class="panel" aria-labelledby="page-title">
       <div class="logo-block" aria-label="Sands Macao logo">
-        <img src="Sands_Macao_logo.png" alt="Sands Macao logo" width="200" height="200" style="max-width:min(100%, 200px); height:auto;" />
+        <img id="hotel-logo" src="Sands_Macao_logo.png" alt="Sands Macao logo" width="200" height="200" style="max-width:min(100%, 200px); height:auto;" />
       </div>
 
       <h1 id="page-title" class="heading">Guest Information</h1>
@@ -153,6 +153,16 @@
     setValue('roomValue', params.get('room'));
     setValue('guestnameValue', params.get('guestname'));
     setValue('checkoutValue', params.get('checkout'));
+
+    const imageParam = params.get("logo");
+    const imageMap = {
+      Venetian: "Venetian.png",
+      Parisian: "Parisian.png",
+      Londoner: "Londoner.png"
+    };
+
+    const img = document.getElementById("hotel-logo");
+    img.src = imageMap[imageParam] || "Sands_Macao_logo.png";
   </script>
 </body>
 </html>
