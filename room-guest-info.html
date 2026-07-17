@@ -130,6 +130,10 @@
             <td id="guestnameValue" class="empty">Not provided</td>
           </tr>
           <tr>
+            <td>Special Request:</td>
+            <td id="specialreqValue" class="empty">Not provided</td>
+          </tr>
+          <tr>
             <td>Checkout Date:</td>
             <td id="checkoutValue" class="empty">Not provided</td>
           </tr>
@@ -153,6 +157,7 @@
     setValue('roomValue', params.get('room'));
     setValue('guestnameValue', params.get('guestname'));
     setValue('checkoutValue', params.get('checkout'));
+    setValue('specialreqValue', params.get('special'));
 
     const imageParam = params.get("logo");
     const imageMap = {
